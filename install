@@ -1,0 +1,70 @@
+#!/usr/bin/env bash
+
+# Automated installer for dguay
+
+function pecho() {
+    local PRINT_COLOR=6
+    if [[ ! -z "$2" ]] ; then
+        PRINT_COLOR=$2
+    fi
+
+    echo -ne "$(tput setaf "${PRINT_COLOR}")$1$(tput sgr0)"
+}
+
+###############################################################################
+# Dotbot install
+###############################################################################
+
+pecho "Linking with Dotbot:...\n"
+
+set -e
+
+CONFIG="install.conf.yaml"
+DOTBOT_DIR="dotbot"
+
+DOTBOT_BIN="bin/dotbot"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+git submodule update --init --recursive "${DOTBOT_DIR}"
+
+"${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${CONFIG}" "${@}"
+
+###############################################################################
+# Homebrew and ZSH configurations
+###############################################################################
+
+pecho "Installing Homebrew...\n"
+
+# Check for Homebrew and install if we don't have it
+if test ! $(which brew); then
+  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+pecho "Updating Homebrew recipes...\n"
+
+# Update Homebrew recipes
+brew update
+
+pecho "Installing all apps and dependencies \nwith brew bundle (from Brewfile)...\n"
+
+# Install all our dependencies with bundle (See Brewfile)
+brew tap homebrew/bundle
+brew bundle
+
+pecho "Make ZSH the default shell...\n"
+
+# Make ZSH the default shell environment
+chsh -s $(which zsh)
+
+###############################################################################
+# macOS preferences 
+###############################################################################
+
+pecho "Set macOS preferences...\n"
+
+# Set macOS preferences
+# We will run this last because this will reload the shell
+source macos
+
+pecho "Done!"

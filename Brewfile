@@ -41,9 +41,6 @@ cask 'iterm2'
 cask 'shuttle'
 cask 'tower'
 cask 'transmit'
-cask 'vagrant'
-cask 'virtualbox'
-cask 'virtualbox-extension-pack'
 cask 'vlc'
 
 # Quicklook
