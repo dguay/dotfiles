@@ -1,10 +1,18 @@
 # Shortcuts
 alias la="ls -laF"
+alias -g G="| grep"
+alias h="history"
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/zshrc"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
 
-# SSH
+# Config files
+alias zshconfig="atom ~/.dotfiles/zshrc
 
+# Robotiq
+alias ssh213='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.213'
+alias ssh248='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.248'
+alias ssh237='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.237'
+alias ssh231='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.231'

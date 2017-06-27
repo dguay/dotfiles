@@ -1,0 +1,29 @@
+# Mercurial configuration file
+# See hgrc(5) for more information
+
+# User Interface settings
+[ui]
+username= David <d.guay@robotiq.com>
+editor=vim
+merge=kdiff3
+ssh=ssh -C
+
+# Enabled extensions
+[extensions]
+hgext.gpg=
+hgext.convert=
+shelve=
+mq=
+extdiff=
+rebase=
+
+# GPG extension settings
+[gpg]
+key=<your private gpg key>
+
+[merge-tools]
+kdiff3.args = $base $local $other -o $output
+
+[extdiff]
+cmd.extdiff = meld 
+
