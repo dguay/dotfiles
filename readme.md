@@ -7,7 +7,7 @@ Reference: https://driesvints.com/blog/getting-started-with-dotfiles
 * [Dotbot](https://github.com/anishathalye/dotbot)
 * [Mackup](https://github.com/lra/mackup)
 * [Homebrew](https://brew.sh/)
-* [Homebrew cask] (https://github.com/caskroom/homebrew-cask)
+* [Homebrew cask](https://github.com/caskroom/homebrew-cask)
 * [zplug](https://github.com/zplug/zplug)
 * zsh
 
