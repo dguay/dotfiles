@@ -1,7 +1,10 @@
 # Shortcuts
+alias la="ls -laF"
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/zshrc"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
-alias library="cd $HOME/Library"
+
+# SSH
+

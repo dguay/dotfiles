@@ -26,29 +26,22 @@ brew 'git'
 brew 'mercurial'
 brew 'tree'
 brew 'mackup'
-brew 'wget'
 
 # Development
 
 # Apps
 cask 'aerial'
 cask 'alfred'
+cask 'appcleaner'
 cask 'atom'
+cask 'bettertouchtool'
 cask 'dropbox'
 cask 'google-chrome'
 cask 'google-drive'
 cask 'iterm2'
-cask 'shuttle'
-cask 'tower'
-cask 'transmit'
+cask 'sourcetree'
+cask 'spotify'
 cask 'vlc'
-
-# Quicklook
-cask 'qlcolorcode'
-cask 'qlmarkdown'
-cask 'quicklook-json'
-cask 'quicklook-csv'
-cask 'qlstephen'
 
 # Fonts
 cask 'font-sauce-code-powerline'
