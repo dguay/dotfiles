@@ -5,27 +5,27 @@ export DOTFILES=$HOME/.dotfiles
 source ~/.zplug/init.zsh
 
 #############################################################
-# Plugin
+# Plugins
 #############################################################
 
 # Themes
-# zplug "dracula/zsh", use:dracula.zsh-theme
+# zplug 'dracula/zsh', as:theme
 # zplug "sindresorhus/pure", as:theme, use:"*.zsh"
-zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
+ zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 
 # oh-my-zsh plugins
 zplug "lib/completion", from:oh-my-zsh
 zplug "lib/history", from:oh-my-zsh
-zplug 'lib/key-bindings', from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/mercurial", from:oh-my-zsh
-
+zplug "lib/key-bindings", from:oh-my-zsh
+zplug "lib/theme-and-appearance", from:oh-my-zsh
+zplug "plugins/git", from:oh-my-zsh, ignore:oh-my-zsh.sh
+zplug "plugins/mercurial", from:oh-my-zsh, ignore:oh-my-zsh.sh
+zplug "plugins/command-not-found", from:oh-my-zsh, ignore:oh-my-zsh.sh
 
 # Reminds you of aliases you have already.
 zplug 'djui/alias-tips'
 
-zplug "supercrabtree/k"
-
+zplug "zsh-users/zsh-syntax-highlighting", defer:3
 
 # Check for uninstalled plugins.
 if ! zplug check --verbose; then
@@ -36,4 +36,4 @@ if ! zplug check --verbose; then
 fi
 
 # Source plugins.
-zplug load --verbose
+zplug load 

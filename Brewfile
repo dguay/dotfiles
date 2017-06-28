@@ -18,9 +18,6 @@ brew 'findutils'
 # Install Bash 4
 brew 'bash'
 
-# Install more recent versions of some macOS tools
-brew 'homebrew/dupes/grep'
-
 # Install Binaries
 brew 'git'
 brew 'mercurial'
@@ -30,21 +27,21 @@ brew 'mackup'
 # Development
 
 # Apps
-cask 'aerial'
-cask 'alfred'
-cask 'appcleaner'
-cask 'atom'
-cask 'bettertouchtool'
-cask 'dropbox'
-cask 'google-chrome'
-cask 'google-drive'
-cask 'iterm2'
-cask 'sourcetree'
-cask 'spotify'
-cask 'vlc'
+brew cask install aerial
+brew cask install alfred
+brew cask install appcleaner
+brew cask install atom
+brew cask install bettertouchtool
+brew cask install dropbox
+brew cask install google-chrome
+brew cask install google-drive
+brew cask install iterm2
+brew cask install sourcetree
+brew cask install spotify
+brew cask install vlc
 
 # Fonts
-cask 'font-sauce-code-powerline'
-cask 'font-source-code-pro'
-cask 'font-source-sans-pro'
-cask 'font-source-serif-pro'
+brew cask install font-sauce-code-powerline
+brew cask install font-source-code-pro
+brew cask install font-source-sans-pro
+brew cask install font-source-serif-pro

@@ -9,7 +9,7 @@ alias reloadcli="source $HOME/zshrc"
 alias dotfiles="cd $DOTFILES"
 
 # Config files
-alias zshconfig="atom ~/.dotfiles/zshrc
+alias zshconfig="atom ~/.dotfiles/zshrc"
 
 # Robotiq
 alias ssh213='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.213'

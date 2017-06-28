@@ -17,8 +17,6 @@ function pecho() {
 
 pecho "Linking with Dotbot:...\n"
 
-set -e
-
 CONFIG="install.conf.yaml"
 DOTBOT_DIR="dotbot"
 
@@ -46,7 +44,7 @@ pecho "Updating Homebrew recipes...\n"
 # Update Homebrew recipes
 brew update
 
-pecho "Installing all apps and dependencies \nwith brew bundle (from Brewfile)...\n"
+pecho "Installing all apps and dependencies with brew bundle (from Brewfile)...\n"
 
 # Install all our dependencies with bundle (See Brewfile)
 brew tap homebrew/bundle
