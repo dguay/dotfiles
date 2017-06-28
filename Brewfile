@@ -27,21 +27,18 @@ brew 'mackup'
 # Development
 
 # Apps
-brew cask install aerial
-brew cask install alfred
-brew cask install appcleaner
-brew cask install atom
-brew cask install bettertouchtool
-brew cask install dropbox
-brew cask install google-chrome
-brew cask install google-drive
-brew cask install iterm2
-brew cask install sourcetree
-brew cask install spotify
-brew cask install vlc
+cask 'alfred'
+cask 'appcleaner'
+cask 'atom'
+cask 'bettertouchtool'
+cask 'dropbox'
+cask 'google-chrome'
+cask 'google-drive'
+cask 'iterm2'
+cask 'sourcetree'
+cask 'spotify'
+cask 'vlc'
 
 # Fonts
-brew cask install font-sauce-code-powerline
-brew cask install font-source-code-pro
-brew cask install font-source-sans-pro
-brew cask install font-source-serif-pro
+cask 'font-source-code-pro'
+cask 'font-source-sans-pro'

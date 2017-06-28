@@ -4,6 +4,9 @@ export DOTFILES=$HOME/.dotfiles
 # Initialize zplug.
 source ~/.zplug/init.zsh
 
+# Initialize aliases
+source ~/.aliases
+
 #############################################################
 # Plugins
 #############################################################
@@ -11,7 +14,7 @@ source ~/.zplug/init.zsh
 # Themes
 # zplug 'dracula/zsh', as:theme
 # zplug "sindresorhus/pure", as:theme, use:"*.zsh"
- zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
+zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 
 # oh-my-zsh plugins
 zplug "lib/completion", from:oh-my-zsh
