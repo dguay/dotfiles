@@ -8,11 +8,19 @@ source ~/.zplug/init.zsh
 source ~/.aliases
 
 #############################################################
+# Env
+#############################################################
+if [[ -e /usr/libexec/java_home ]]; then
+  export JAVA_HOME=`/usr/libexec/java_home`
+fi
+
+export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
+
+#############################################################
 # Plugins
 #############################################################
 
 # Themes
-# zplug 'dracula/zsh', as:theme
 # zplug "sindresorhus/pure", as:theme, use:"*.zsh"
 zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 

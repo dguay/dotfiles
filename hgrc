@@ -8,14 +8,17 @@ editor=vim
 merge=kdiff3
 ssh=ssh -C
 
+# Abort instead of trying to auto-commit when subrepos have changes
+commitsubrepos = no
+
 # Enabled extensions
 [extensions]
 hgext.gpg=
 hgext.convert=
-shelve=
-mq=
-extdiff=
-rebase=
+hgext.shelve=
+hgext.mq=
+hgext.extdiff=
+hgext.rebase=
 
 # GPG extension settings
 [gpg]
@@ -25,5 +28,5 @@ key=<your private gpg key>
 kdiff3.args = $base $local $other -o $output
 
 [extdiff]
-cmd.extdiff = meld 
-
+kdiff = kdiff3
+meld =

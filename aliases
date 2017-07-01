@@ -2,14 +2,17 @@
 alias la="ls -laF"
 alias -g G="| grep"
 alias h="history"
+alias ..="cd .."
+alias q="~ && clear"
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/zshrc"
+
 
 # Directories
 alias dotfiles="cd $DOTFILES"
 
 # Config files
-alias zshconfig="atom ~/.dotfiles/zshrc"
+alias zshconfig="vim ~/.dotfiles/zshrc"
 
 # Robotiq
 alias ssh213='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.213'

@@ -37,6 +37,7 @@ cask 'google-drive'
 cask 'iterm2'
 cask 'sourcetree'
 cask 'spotify'
+cask 'the-unarchiver'
 cask 'vlc'
 
 # Fonts
