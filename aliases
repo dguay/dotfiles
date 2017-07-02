@@ -3,7 +3,10 @@ alias la="ls -laF"
 alias -g G="| grep"
 alias h="history"
 alias ..="cd .."
+alias ~="cd ~"
 alias q="~ && clear"
+alias clr="clear"
+
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/zshrc"
 

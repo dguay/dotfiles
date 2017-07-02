@@ -3,5 +3,4 @@ syntax: glob
 *~
 *.DS_Store
 .idea/*
-*.iml
 *.orig
