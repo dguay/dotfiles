@@ -23,7 +23,6 @@ Follow these install instructions to setup a new Mac.
 6. Append `/usr/local/bin/zsh` to the end of your `/etc/shells` file
 7. Run `install` to start the installation
 10. Restart your computer to finalize the process
-11. We're ready to work!
 
 ## Your Own Dotfiles
 
@@ -35,4 +34,4 @@ If you want to start your own dotfiles from this setup, it's pretty easy to do s
 
 * Check out the [`aliases`](./aliases) file and add your own aliases.
 
-* Check out the [`zsh config file`](./zshrc).
+* Check out the [`zsh config`](./zshrc) file and add your plugins.
