@@ -16,7 +16,7 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 sudo pmset -a standbydelay 86400
 
 # Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
+sudo nvram SystemAudioVolume=%00
 
 # Set highlight color to green
 defaults write NSGlobalDomain AppleHighlightColor -string "0.764700 0.976500 0.568600"
@@ -71,6 +71,7 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
 defaults write com.apple.universalaccess HIDScrollZoomModifierMask -int 262144
+
 # Follow the keyboard focus while zoomed in
 defaults write com.apple.universalaccess closeViewZoomFollowsFocus -bool true
 
@@ -241,9 +242,6 @@ defaults write com.apple.mail SpellCheckingBehavior -string "NoSpellCheckingEnab
 # Terminal & iTerm 2                                                          #
 ###############################################################################
 
-# Only use UTF-8 in Terminal.app
-defaults write com.apple.terminal StringEncodings -array 4
-
 # Don’t display the annoying prompt when quitting iTerm
 defaults write com.googlecode.iterm2 PromptOnQuit -bool false
 
@@ -304,13 +302,6 @@ defaults write com.apple.appstore ShowDebugMenu -bool true
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 ###############################################################################
-# Date & Time                                                                 #
-###############################################################################
-
-# Custom DateFormat
-# defaults write com.apple.menuextra.clock DateFormat "EEE MMM d  H:mm"
-
-###############################################################################
 # Photos                                                                      #
 ###############################################################################
 
@@ -321,6 +312,7 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 # Kill affected applications                                                  #
 ###############################################################################
 
+# This made the script crash.
 #for app in "Activity Monitor" "Address Book" "Calendar" "Contacts" "cfprefsd" \
 #    "Dock" "Finder" "Mail" "Messages" "Photos" "Safari" "SystemUIServer" \
 #    "Terminal" "Tweetbot" "iCal"; do
@@ -328,5 +320,3 @@ defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
 #done
 
 echo "Done. Note that some of these changes require a logout/restart to take effect."
-
-

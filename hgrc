@@ -3,7 +3,7 @@
 
 # User Interface settings
 [ui]
-username= David <d.guay@robotiq.com>
+username= David Guay <d.guay@robotiq.com>
 editor=vim
 merge=kdiff3
 ssh=ssh -C

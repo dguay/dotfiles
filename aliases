@@ -10,7 +10,6 @@ alias clr="clear"
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/zshrc"
 
-
 # Directories
 alias dotfiles="cd $DOTFILES"
 
@@ -18,7 +17,14 @@ alias dotfiles="cd $DOTFILES"
 alias zshconfig="vim ~/.dotfiles/zshrc"
 
 # Robotiq
-alias ssh213='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.213'
-alias ssh248='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.248'
-alias ssh237='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.237'
-alias ssh231='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@192.168.1.231'
+alias ssh100='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@10.20.1.100'
+alias ssh101='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@10.20.1.101'
+alias ssh102='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@10.20.1.102'
+alias ssh103='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@10.20.1.103'
+
+# Functions
+
+function findstring() {
+  grep -rnw $2 -e $1
+}
+
