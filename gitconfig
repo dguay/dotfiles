@@ -6,8 +6,10 @@
 	trustExitCode = true
 [user]
 	name = David Guay
-	email = david.guay.1@etsmtl.net
+	email = d.guay@robotiq.com
 [core]
 	excludesfile = /Users/d.guay/.gitignore_global
 [commit]
 	template = /Users/d.guay/.stCommitMsg
+[merge]
+	tool = kdiff3

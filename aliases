@@ -8,7 +8,10 @@ alias q="~ && clear"
 alias clr="clear"
 
 alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
-alias reloadcli="source $HOME/zshrc"
+alias reloadcli="source $HOME/.zshrc"
+
+# Git
+alias glom="gl origin master"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
