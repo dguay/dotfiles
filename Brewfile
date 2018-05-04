@@ -22,24 +22,32 @@ brew 'bash'
 brew 'git'
 brew 'mercurial'
 brew 'tree'
-brew 'mackup'
 
 # Development
+brew 'nvm'
+brew 'phantomjs'
+brew 'sshpass'
+brew 'yarn'
 
 # Apps
 cask 'alfred'
 cask 'appcleaner'
-cask 'atom'
 cask 'bettertouchtool'
 cask 'dropbox'
 cask 'google-chrome'
 cask 'google-drive'
 cask 'iterm2'
+cask 'kdiff3'
 cask 'sourcetree'
 cask 'spotify'
 cask 'the-unarchiver'
 cask 'vlc'
+cask 'visual-studio-code'
 
 # Fonts
 cask 'font-source-code-pro'
 cask 'font-source-sans-pro'
+
+# quicklook
+cask 'quicklook-json'
+cask 'quicklook-csv'
