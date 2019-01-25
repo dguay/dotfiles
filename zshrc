@@ -27,6 +27,10 @@ fi
 export NVM_DIR=~/.nvm
 source $(brew --prefix nvm)/nvm.sh
 
+# Maven
+export MAVEN_MASTER_ACCESS_KEY=AKIAJCW2V4J5PT6WOCUQ
+export MAVEN_MASTER_SECRET_KEY=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
+
 #############################################################
 # Plugins
 #############################################################

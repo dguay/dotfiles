@@ -2,7 +2,7 @@
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [user]
 	name = David Guay
@@ -13,3 +13,6 @@
 	template = /Users/d.guay/.stCommitMsg
 [merge]
 	tool = kdiff3
+[credential]
+	helper = !aws codecommit credential-helper $@
+	UseHttpPath = true
