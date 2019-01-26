@@ -37,7 +37,7 @@ zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:them
 
 # SPACESHIP Theme
 SPACESHIP_PROMPT_ORDER=(user host dir hg git exec_time line_sep jobs char)
-SPACESHIP_PROMPT_SYMBOL=❯
+SPACESHIP_CHAR_SYMBOL=❯
 #SPACESHIP_PROMPT_ADD_NEWLINE=false
 #SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_DIR_COLOR="012"

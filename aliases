@@ -19,12 +19,6 @@ alias dotfiles="cd $DOTFILES"
 # Config files
 alias zshconfig="vim ~/.dotfiles/zshrc"
 
-# Robotiq
-alias ssh100='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@10.20.1.100'
-alias ssh101='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@10.20.1.101'
-alias ssh102='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@10.20.1.102'
-alias ssh103='sshpass -p "easybot" ssh -o StrictHostKeyChecking=no root@10.20.1.103'
-
 # Meteo
 alias meteo="curl wttr.in/quebec"
 
