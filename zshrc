@@ -15,6 +15,12 @@ export PATH=/usr/local/Cellar/qt/5.9.1/bin:$PATH
 export PATH=/usr/local/Cellar/gcc@4.9:$PATH
 
 #############################################################
+# Misc
+#############################################################
+
+
+
+#############################################################
 # Env
 #############################################################
 if [[ -e /usr/libexec/java_home ]]; then
@@ -36,11 +42,12 @@ source $(brew --prefix nvm)/nvm.sh
 zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 
 # SPACESHIP Theme
-SPACESHIP_PROMPT_ORDER=(user host dir hg git exec_time line_sep jobs char)
-SPACESHIP_CHAR_SYMBOL=❯
+SPACESHIP_PROMPT_ORDER=(user host dir git exec_time line_sep jobs char)
+SPACESHIP_CHAR_SYMBOL="❯ " 
 #SPACESHIP_PROMPT_ADD_NEWLINE=false
 #SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_DIR_COLOR="012"
+SPACESHIP_GIT_BRANCH_COLOR=cyan
 
 # Bullet-train theme
 #setopt prompt_subst # Make sure prompt is able to be generated properly.
