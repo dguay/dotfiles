@@ -42,12 +42,12 @@ source $(brew --prefix nvm)/nvm.sh
 zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
 
 # SPACESHIP Theme
-SPACESHIP_PROMPT_ORDER=(user host dir git exec_time line_sep jobs char)
+SPACESHIP_PROMPT_ORDER=(user host dir git hg exec_time line_sep jobs char)
 SPACESHIP_CHAR_SYMBOL="❯ " 
 #SPACESHIP_PROMPT_ADD_NEWLINE=false
 #SPACESHIP_PROMPT_SEPARATE_LINE=false
 SPACESHIP_DIR_COLOR="012"
-SPACESHIP_GIT_BRANCH_COLOR=cyan
+SPACESHIP_GIT_BRANCH_COLOR=magenta
 
 # Bullet-train theme
 #setopt prompt_subst # Make sure prompt is able to be generated properly.
