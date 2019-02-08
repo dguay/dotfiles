@@ -37,6 +37,8 @@ ehthumbs.db
 Thumbs.db
 .idea/
 .vagrant/
+.swp
+.swpx
 
 # Git files #
 #############
