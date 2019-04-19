@@ -28,3 +28,6 @@ function findstring() {
   grep -rnw $2 -e $1
 }
 
+function findname() {
+  find $2 -name $1 -print
+}
