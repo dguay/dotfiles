@@ -7,7 +7,6 @@ alias ~="cd ~"
 alias q="~ && clear"
 alias clr="clear"
 
-alias copyssh="pbcopy < $HOME/.ssh/id_rsa.pub"
 alias reloadcli="source $HOME/.zshrc"
 
 # Git
@@ -18,6 +17,9 @@ alias dotfiles="cd $DOTFILES"
 
 # Config files
 alias zshconfig="vim ~/.dotfiles/zshrc"
+
+# Terraform
+alias tf=terraform
 
 # Meteo
 alias meteo="curl wttr.in/quebec"

@@ -7,10 +7,8 @@
 - link:
     ~/.dotfiles: ''
     ~/.gitignore_global: gitignore_global
-    ~/.hgignore_global: hgignore_global
     ~/.zshrc: zshrc
     ~/.aliases: aliases
-    ~/.hgrc: hgrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

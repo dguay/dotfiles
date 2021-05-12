@@ -10,10 +10,6 @@ source ~/.aliases
 # 256 colors terminal
 export TERM="xterm-256color"
 
-# PATH variable
-export PATH=/usr/local/Cellar/qt/5.9.1/bin:$PATH
-export PATH=/usr/local/Cellar/gcc@4.9:$PATH
-
 #############################################################
 # Env
 #############################################################
@@ -72,7 +68,6 @@ zplug "lib/key-bindings", from:oh-my-zsh
 zplug "lib/theme-and-appearance", from:oh-my-zsh
 zplug "lib/spectrum", from:oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh, ignore:oh-my-zsh.sh
-zplug "plugins/mercurial", from:oh-my-zsh, ignore:oh-my-zsh.sh
 zplug "plugins/command-not-found", from:oh-my-zsh, ignore:oh-my-zsh.sh
 zplug 'djui/alias-tips'
 # zplug "zsh-users/zsh-syntax-highlighting", defer:3
@@ -91,7 +86,3 @@ fi
 
 # Source plugins.
 zplug load 
-
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[[ -f /Users/d.guay/code/lab/blockly-to-urscript/polysporin/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /Users/d.guay/code/lab/blockly-to-urscript/polysporin/node_modules/tabtab/.completions/electron-forge.zsh
