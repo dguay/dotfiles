@@ -6,7 +6,7 @@
 	trustExitCode = true
 [user]
 	name = David Guay
-	email = d.guay@robotiq.com
+	email = david.guay@bell.ca 
 [core]
 	excludesfile = /Users/d.guay/.gitignore_global
 [commit]
