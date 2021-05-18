@@ -13,16 +13,13 @@ export TERM="xterm-256color"
 #############################################################
 # Env
 #############################################################
-if [[ -e /usr/libexec/java_home ]]; then
-  export JAVA_HOME=`/usr/libexec/java_home`
-fi
-
-# export JAVA_TOOL_OPTIONS='-Djava.awt.headless=true'
+#if [[ -e /usr/libexec/java_home ]]; then
+#  export JAVA_HOME=`/usr/libexec/java_home`
+#fi
 
 # NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
 
 # NODE_PATH
 export NODE_PATH=$NODE_PATH:`npm root -g`
@@ -85,4 +82,4 @@ if ! zplug check --verbose; then
 fi
 
 # Source plugins.
-zplug load 
+zplug load --verbose
