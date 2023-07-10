@@ -10,7 +10,7 @@ alias clr="clear"
 alias reloadcli="source $HOME/.zshrc"
 
 # Git
-alias glom="gl origin master"
+alias glod="git pull origin develop"
 
 # Directories
 alias dotfiles="cd $DOTFILES"
@@ -33,3 +33,65 @@ function findstring() {
 function findname() {
   find $2 -name $1 -print
 }
+
+### BELL ALIASES ###
+alias proxy-on="export HTTP_PROXY=http://fastweb.int.bell.ca:80; export HTTPS_PROXY=http://fastweb.int.bell.ca:80; export http_proxy=http://fastweb.int.bell.ca:80; export https_proxy=http://fastweb.int.bell.ca:80; export NO_PROXY=*.int.bell.ca;"
+alias proxy-off="unset HTTP_PROXY; unset HTTPS_PROXY; unset http_proxy; unset https_proxy"
+
+# Command to stop all the active docker containers
+alias dockersPsStop='docker stop $(docker ps -a -q)'
+# Command to remove a container
+alias dockersPsRm='docker rm -v $(docker ps -aq -f status=exited)'
+# Command to remove Docker images from your disk
+alias dockersImgRm='docker images -q | xargs docker rmi -f'
+# Command to see the stats of your running Docker containers
+alias dockersStats='docker stats $(docker inspect -f {{.Name}} $(docker ps -q))'
+ 
+alias set-bell-proxy='export HTTP_PROXY=http://fastweb.int.bell.ca:8083; export HTTPS_PROXY=http://fastweb.int.bell.ca:8083; export http_proxy=http://fastweb.int.bell.ca:8083; export https_proxy=http://fastweb.int.bell.ca:8083;'
+alias unset-bell-proxy='unset HTTP_PROXY; unset HTTPS_PROXY; unset http_proxy; unset https_proxy;'
+ 
+# random aliases
+alias cdds='cd "$BELL_EWOC_DOCKER_SCRIPTS"'
+alias cdgit='cd "$GIT_PROJECT_HOMES"'
+alias lrp='cd "$GIT_PROJECT_HOMES/bell-ec-liferay"; rm deploy-dxp/*; rm liferayLastPluginsDeployed-dxp/*; cd -'
+ 
+# maven aliases
+alias mci='mvn clean install'
+alias mcp='mvn clean package'
+alias mcpd='mvn clean package; cp target/*.*ar "$BELL_EC_LF_SRC/deploy-dxp"'
+ 
+# dm - docker manage aliases
+# view number of open network connections
+alias dm-cons='lsof -p $(pgrep vpnkit) | wc -l'
+# view running container stats in real-time
+alias dm-stats='docker stats --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}\t{{.MemPerc}}\t{{.NetIO}}\t{{.BlockIO}}\t{{.PIDs}}"'
+# view bare container list
+alias dm-ps='docker ps -a --format "table {{.ID}}\t{{.Image}}\t{{.RunningFor}}\t{{.Status}}\t{{.Names}}"'
+# stop active containers
+alias dm-stop='docker ps -q | xargs docker stop'
+# remove old images
+dm-rmoi(){ docker image ls | grep none | awk '{print $3}' | xargs docker rmi -f; }
+# remove old containers
+dm-rmoc(){ for c in $(docker ps -a | awk '{print $2}' | grep '[0-9a-f]$'); do docker ps -a | grep $c | awk '{print $1}' | xargs docker rm -v; done }
+ 
+# dc - docker compose aliases
+alias dc-all='cd "$BELL_DOCKER_SCRIPTS_V2"; ./common/common-all.sh;'
+alias dc-ocall='cd "$BELL_DOCKER_SCRIPTS_V2"; ./oc/common/common-all.sh'
+
+# sdk java
+alias use-java8="sdk u java $JAVA_8_VERSION"
+alias use-java11="sdk u java $JAVA_11_VERSION"
+alias set-default-jvm-java8="sdk d java $JAVA_8_VERSION"
+alias set-default-jvm-java11="sdk d java $JAVA_11_VERSION"
+
+# In this example, I map my ~/Dev directory that contains all my GitLab projects and I can now launch them within the container.
+alias dock-ans='docker run -it --rm -v ~/Dev:/workdir -w /workdir -e "SSH_KEY=$(cat ~/Dev/my_ssh_private_key)" vas-tools/ansible bash'dock-ans  
+# If you want to load your SSH_KEY in the SSH Agent of the container
+# This will also make sure that SSH ignores the host keyseval $(ssh-agent)echo -e "$SSH_KEY" | ssh -mkdir -p /root/.sshecho -e "Host *\n\tStrictHostKeyChecking no\n" > /root/.ssh/config  
+# Any Ansible playbook can now be run without installing anything else on your Mac 
+
+alias r1='fix-host && networksetup -setv6off Wi-Fi'
+alias r2='run_basic_common'
+alias r3='run_oc_basic'
+alias r4='run_oc_bali'
+alias r5='ssh_uat_bali'
