@@ -1,8 +1,5 @@
 # Path to dotfiles directory.
-export DOTFILES=$HOME/.dotfiles
-
-# Initialize zplug.
-source ~/.zplug/init.zsh
+export DOTFILES="$HOME/.dotfiles"
 
 # 256 colors terminal
 export TERM="xterm-256color"
@@ -10,79 +7,52 @@ export TERM="xterm-256color"
 #############################################################
 # Env
 #############################################################
-#if [[ -e /usr/libexec/java_home ]]; then
-#  export JAVA_HOME=`/usr/libexec/java_home`
-#fi
 
-# NVM
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# NVM lazy loading
+export NVM_DIR="$HOME/.nvm"
 
-# NODE_PATH
-export NODE_PATH=$NODE_PATH:`npm root -g`
+_lazy_load_nvm() {
+  unset -f nvm node npm npx yarn pnpm corepack
+
+  [ -s "$(brew --prefix nvm)/nvm.sh" ] && source "$(brew --prefix nvm)/nvm.sh"
+
+  # Preserve your old NODE_PATH behavior, but only after nvm is loaded.
+  export NODE_PATH="$(npm root -g 2>/dev/null)${NODE_PATH:+:$NODE_PATH}"
+
+  "$@"
+}
+
+for cmd in nvm node npm npx yarn pnpm corepack; do
+  eval "
+    $cmd() {
+      _lazy_load_nvm $cmd \"\$@\"
+    }
+  "
+done
 
 #############################################################
-# Initialize aliases
+# Aliases
 #############################################################
 
-source ~/.aliases
+[ -f "$HOME/.aliases" ] && source "$HOME/.aliases"
 
 #############################################################
-# Plugins
+# Theme
 #############################################################
 
-# Themes
-# zplug "sindresorhus/pure", as:theme, use:"*.zsh"
-zplug "denysdovhan/spaceship-zsh-theme", use:spaceship.zsh, from:github, as:theme
+eval "$(starship init zsh)"
 
-# SPACESHIP Theme
-SPACESHIP_PROMPT_ORDER=(user host dir git hg node exec_time line_sep jobs char)
-# SPACESHIP_CHAR_SYMBOL="➜  " 
-SPACESHIP_CHAR_SYMBOL="❯ " 
-SPACESHIP_EXEC_TIME_PREFIX=""
-#SPACESHIP_PROMPT_ADD_NEWLINE=false
-#SPACESHIP_PROMPT_SEPARATE_LINE=false
-SPACESHIP_DIR_COLOR="012"
-# GIT
-# Disable git symbol
-SPACESHIP_GIT_SYMBOL="" # disable git prefix
-SPACESHIP_GIT_BRANCH_PREFIX="" # disable branch prefix too
-# Wrap git in `git:(...)`
-SPACESHIP_GIT_PREFIX='git:('
-SPACESHIP_GIT_SUFFIX=") "
-SPACESHIP_GIT_BRANCH_SUFFIX="" # remove space after branch name
-# Unwrap git status from `[...]`
-SPACESHIP_GIT_STATUS_PREFIX=""
-SPACESHIP_GIT_STATUS_SUFFIX=""
-# Branch color
-SPACESHIP_GIT_BRANCH_COLOR=magenta
+#############################################################
+# Antidote
+#############################################################
 
-# Bullet-train theme
-#setopt prompt_subst # Make sure prompt is able to be generated properly.
-#zplug "caiogondim/bullet-train.zsh", use:bullet-train.zsh-theme, defer:3 # defer until other plugins like oh-my-zsh is loaded
+autoload -Uz compinit
+compinit
 
-# PLUGINS 
-zplug "lib/completion", from:oh-my-zsh
-zplug "lib/history", from:oh-my-zsh
-zplug "lib/key-bindings", from:oh-my-zsh
-zplug "lib/theme-and-appearance", from:oh-my-zsh
-zplug "lib/spectrum", from:oh-my-zsh
-zplug "plugins/git", from:oh-my-zsh, ignore:oh-my-zsh.sh
-zplug "plugins/command-not-found", from:oh-my-zsh, ignore:oh-my-zsh.sh
-zplug 'djui/alias-tips'
-# zplug "zsh-users/zsh-syntax-highlighting", defer:3
-zplug "zdharma/fast-syntax-highlighting"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "iam4x/zsh-iterm-touchbar"
-zplug "jimeh/zsh-peco-history", defer:2
+source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
+antidote load "$HOME/.zsh_plugins.txt"
 
-# Check for uninstalled plugins.
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
-
-# Source plugins.
-zplug load --verbose
+# accept autosuggestion with TAB
+bindkey '^I' autosuggest-accept
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
