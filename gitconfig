@@ -6,15 +6,10 @@
 	trustExitCode = true
 [user]
 	name = David Guay
-	email = david.guay1@bell.ca 
-[core]
-        excludesfile = /Users/ez97548/.gitignore_global
+	email = davidguay01@gmail.com
 [commit]
-	template = /Users/ez97548/.stCommitMsg
+	template = /Users/d.guay/.stCommitMsg
 [merge]
 	tool = kdiff3
-[credential]
-	helper = !aws codecommit credential-helper $@
-	UseHttpPath = true
 [mergetool "kdiff3"]
 	path = /Applications/kdiff3.app/Contents/MacOS/kdiff3
