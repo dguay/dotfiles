@@ -8,6 +8,9 @@ export TERM="xterm-256color"
 # Env
 #############################################################
 
+# Point directly to NVM's current version symlink
+export PATH="$HOME/.nvm/versions/node/current/bin:$PATH"
+
 # NVM lazy loading
 export NVM_DIR="$HOME/.nvm"
 
@@ -16,7 +19,7 @@ _lazy_load_nvm() {
 
   [ -s "$(brew --prefix nvm)/nvm.sh" ] && source "$(brew --prefix nvm)/nvm.sh"
 
-  # Preserve your old NODE_PATH behavior, but only after nvm is loaded.
+ # Preserve your old NODE_PATH behavior, but only after nvm is loaded.
   export NODE_PATH="$(npm root -g 2>/dev/null)${NODE_PATH:+:$NODE_PATH}"
 
   "$@"
@@ -29,6 +32,14 @@ for cmd in nvm node npm npx yarn pnpm corepack; do
     }
   "
 done
+
+# NVM normal loading
+# export NVM_DIR="$HOME/.nvm"
+
+# [ -s "$(brew --prefix nvm)/nvm.sh" ] && source "$(brew --prefix nvm)/nvm.sh"
+
+# # Optional: preserve your NODE_PATH behavior
+# export NODE_PATH="$(npm root -g 2>/dev/null)${NODE_PATH:+:$NODE_PATH}"
 
 #############################################################
 # Aliases
