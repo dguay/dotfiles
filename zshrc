@@ -52,7 +52,7 @@ compinit
 source "$(brew --prefix)/opt/antidote/share/antidote/antidote.zsh"
 antidote load "$HOME/.zsh_plugins.txt"
 
-# accept autosuggestion with TAB
-bindkey '^I' autosuggest-accept
+# accept autosuggestion with TAB (conflict with directory autocomplete)
+#bindkey '^I' autosuggest-accept
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
