@@ -14,12 +14,12 @@ export PATH="$HOME/.nvm/versions/node/current/bin:$PATH"
 # NVM lazy loading
 export NVM_DIR="$HOME/.nvm"
 
-_lazy_load_nvm() {
+lazy_load_nvm() {
   unset -f nvm node npm npx yarn pnpm corepack
 
   [ -s "$(brew --prefix nvm)/nvm.sh" ] && source "$(brew --prefix nvm)/nvm.sh"
 
- # Preserve your old NODE_PATH behavior, but only after nvm is loaded.
+  # Preserve your old NODE_PATH behavior, but only after nvm is loaded.
   export NODE_PATH="$(npm root -g 2>/dev/null)${NODE_PATH:+:$NODE_PATH}"
 
   "$@"
@@ -28,7 +28,7 @@ _lazy_load_nvm() {
 for cmd in nvm node npm npx yarn pnpm corepack; do
   eval "
     $cmd() {
-      _lazy_load_nvm $cmd \"\$@\"
+      lazy_load_nvm $cmd \"\$@\"
     }
   "
 done
@@ -67,3 +67,4 @@ antidote load "$HOME/.zsh_plugins.txt"
 #bindkey '^I' autosuggest-accept
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+export PATH="/usr/local/share/android-commandlinetools/platform-tools:$PATH"
